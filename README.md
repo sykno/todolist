@@ -44,3 +44,14 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+### `yarn lint`
+
+TypeScript の検証。
+修正必要箇所が見つかった場合は TypeScript 補正コマンドを実行。
+検証設定は eslintrc.json に記述。
+
+### `yarn lint:fix`
+
+TypeScript の検証で見つかったエラー内容を補正。
+検証設定は eslintrc.json に記述。
