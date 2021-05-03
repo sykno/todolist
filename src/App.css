@@ -41,8 +41,8 @@ ul {
   border-top: 6px solid #10a4df;
 }
 
-.task__area--itemInner {
-  padding:  0 15px;
+.task__area--item-inner {
+  padding: 0 15px;
 }
 
 .task__list {
@@ -55,7 +55,7 @@ ul {
   margin-top: 10px;
 }
 
-.task__list--itemText {
+.task__list--item-text {
   min-width: 50px;
   padding: 6px 8px;
   border-radius: 5px;

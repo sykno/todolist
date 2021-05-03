@@ -1,35 +1,31 @@
-import { connect } from "react-redux";
-import { addTodo } from "../actions";
+import React, { useCallback, useState, FC } from "react";
+import { addTodo } from "../state/todo/todoActions";
+import { useDispatch } from "react-redux";
 
-type Props = {
-  dispatch?: any;
-};
+export const InputTodos: FC = () => {
+  const dispatch = useDispatch();
+  const [newTodo, setNewTodo] = useState("");
 
-let InputTodos: React.FC<Props> = ({ dispatch }) => {
-  let input: any;
+  const inputText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewTodo(e.target.value);
+  };
+
+  const registration = useCallback(() => {
+    if (newTodo === "") return;
+    dispatch(addTodo(newTodo));
+    setNewTodo("");
+  }, [dispatch, newTodo]);
 
   return (
     <>
       <div className="input__area">
         <input
-          ref={(node) => {
-            input = node;
-          }}
+          value={newTodo}
           placeholder="TODOを入力してください"
+          onChange={inputText}
         />
-        <button
-          onClick={() => {
-            dispatch(addTodo(input.value));
-            input.value = "";
-          }}
-        >
-          登録
-        </button>
+        <button onClick={registration}>登録</button>
       </div>
     </>
   );
 };
-
-InputTodos = connect()(InputTodos);
-
-export default InputTodos;

@@ -1,21 +1,18 @@
 import "./App.css";
-import InputTodos from "./components/InputTodos";
-import CompleteTodos from "./components/CompleteTodos";
-import VisibleTodoList from "./container/VisibleTodoList"
+import React from "react";
+import { InputTodos } from "./components/InputTodos";
+import { TodoList } from "./components/TodoList";
 
-function App() {
+export function App() {
   return (
     <>
-    <div className="container">
-      <h1>TODOリスト</h1>
-      <InputTodos />
-      <div className="task__area">
-        <VisibleTodoList />
-        <CompleteTodos />
+      <div className="container">
+        <h1>TODOリスト</h1>
+        <InputTodos />
+        <div className="task__area">
+          <TodoList />
+        </div>
       </div>
-    </div>
     </>
   );
 }
-
-export default App;
